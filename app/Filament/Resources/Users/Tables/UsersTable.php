@@ -102,6 +102,12 @@ class UsersTable
                 Action::make('exportPdf')
                     ->label('Exportar PDF')
                     ->color('danger')
+                    ->icon(Heroicon::ArrowDownCircle)
+                    ->requiresConfirmation()
+                    ->modalHeading('Confirmar exportación')
+                    ->modalDescription('Se generará un archivo PDF con los registros filtrados actualmente. ¿Desea continuar?')
+                    ->modalSubmitActionLabel('Sí, exportar')
+                    ->modalCancelActionLabel('Cancelar')
                     ->action(function (Table $table, PdfService $service) {
                         $users = $table->getLivewire()->getFilteredSortedTableQuery()->get();
 

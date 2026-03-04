@@ -84,6 +84,7 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationSort(160)
                     ->authorize(fn(): bool => auth()->check() && auth()->user()->can('View:LogTable')),
             ])
+            ->databaseNotifications()
             ->authMiddleware([
                 Authenticate::class,
             ]);
