@@ -81,7 +81,7 @@ class AdminPanelProvider extends PanelProvider
                     ),
 
                 FilamentLogViewer::make()
-                    ->navigationSort(160)
+                    ->navigationSort(170)
                     ->authorize(fn(): bool => auth()->check() && auth()->user()->can('View:LogTable')),
             ])
             ->databaseNotifications()
