@@ -30,18 +30,19 @@ class ManageGeneralSettings extends SettingsPage
 
     public function form(Schema $schema): Schema
     {
-    return $schema
+        return $schema
             ->components([
                 Section::make('Información General')
                     ->description('Datos principales del sitio web.')
-                    ->icon('heroicon-o-globe-alt')
+                    ->icon(Heroicon::GlobeAlt)
                     ->collapsible()
+                    ->collapsed(true)
                     ->schema([
                         Grid::make(2)->schema([
                             TextInput::make('site_name')
                                 ->label('Nombre del sitio')
                                 ->placeholder('Mi Empresa S.A.')
-                                ->prefixIcon('heroicon-o-identification')
+                                ->prefixIcon(Heroicon::Identification)
                                 ->required()
                                 ->maxLength(100)
                                 ->validationMessages([
@@ -52,7 +53,7 @@ class ManageGeneralSettings extends SettingsPage
                             TextInput::make('site_tagline')
                                 ->label('Eslogan')
                                 ->placeholder('Tu mejor opción en el mercado')
-                                ->prefixIcon('heroicon-o-chat-bubble-left-ellipsis')
+                                ->prefixIcon(Heroicon::ChatBubbleLeftEllipsis)
                                 ->maxLength(160)
                                 ->validationMessages([
                                     'max' => 'El eslogan no puede superar los 160 caracteres.',
@@ -62,23 +63,25 @@ class ManageGeneralSettings extends SettingsPage
                         Textarea::make('site_description')
                             ->label('Descripción del sitio')
                             ->placeholder('Breve descripción sobre qué hace tu sitio web...')
-                            ->rows(3)
+                            ->rows(2)
                             ->maxLength(500)
                             ->validationMessages([
                                 'max' => 'La descripción no puede superar los 500 caracteres.',
                             ]),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
 
                 Section::make('Información de Contacto')
                     ->description('Datos de contacto visibles en el sitio.')
-                    ->icon('heroicon-o-phone')
+                    ->icon(Heroicon::Phone)
                     ->collapsible()
+                    ->collapsed(true)
                     ->schema([
-                        Grid::make(2)->schema([
+                        Grid::make(3)->schema([
                             TextInput::make('contact_email')
                                 ->label('Email de contacto')
                                 ->placeholder('contacto@miempresa.com')
-                                ->prefixIcon('heroicon-o-envelope')
+                                ->prefixIcon(Heroicon::Envelope)
                                 ->email()
                                 ->maxLength(254)
                                 ->validationMessages([
@@ -89,30 +92,27 @@ class ManageGeneralSettings extends SettingsPage
                             TextInput::make('contact_phone')
                                 ->label('Teléfono de contacto')
                                 ->placeholder('+51 987 654 321')
-                                ->prefixIcon('heroicon-o-phone')
+                                ->prefixIcon(Heroicon::Phone)
                                 ->tel()
-                                ->telRegex('/^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{4,10}$/')
-                                ->maxLength(20)
+                                ->maxLength(20),
+
+                            TextInput::make('address')
+                                ->label('Dirección')
+                                ->placeholder('Av. Principal 123, Lima, Perú')
+                                ->prefixIcon(Heroicon::MapPin)
+                                ->maxLength(255)
                                 ->validationMessages([
-                                    'regex' => 'Ingresa un número de teléfono válido.',
-                                    'max' => 'El teléfono no puede superar los 20 caracteres.',
+                                    'max' => 'La dirección no puede superar los 255 caracteres.',
                                 ]),
                         ]),
-
-                        TextInput::make('address')
-                            ->label('Dirección')
-                            ->placeholder('Av. Principal 123, Lima, Perú')
-                            ->prefixIcon('heroicon-o-map-pin')
-                            ->maxLength(255)
-                            ->validationMessages([
-                                'max' => 'La dirección no puede superar los 255 caracteres.',
-                            ]),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
 
                 Section::make('Branding y Medios')
                     ->description('Logotipos, favicon e imagen para redes sociales.')
-                    ->icon('heroicon-o-photo')
+                    ->icon(Heroicon::Photo)
                     ->collapsible()
+                    ->collapsed(true)
                     ->schema([
                         Grid::make(2)->schema([
                             FileUpload::make('logo')
@@ -166,18 +166,20 @@ class ManageGeneralSettings extends SettingsPage
                                     'mimes' => 'Solo se permiten imágenes JPG, PNG o WebP.',
                                 ]),
                         ]),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
 
                 Section::make('SEO — Metadatos')
                     ->description('Información para motores de búsqueda.')
-                    ->icon('heroicon-o-magnifying-glass')
+                    ->icon(Heroicon::MagnifyingGlass)
                     ->collapsible()
+                    ->collapsed(true)
                     ->schema([
                         Grid::make(2)->schema([
                             TextInput::make('meta_title')
                                 ->label('Meta título')
                                 ->placeholder('Mi Empresa | Mejor opción del mercado')
-                                ->prefixIcon('heroicon-o-document-text')
+                                ->prefixIcon(Heroicon::DocumentText)
                                 ->maxLength(70)
                                 ->helperText('Máximo recomendado: 60–70 caracteres.')
                                 ->validationMessages([
@@ -187,7 +189,7 @@ class ManageGeneralSettings extends SettingsPage
                             TextInput::make('meta_author')
                                 ->label('Meta autor')
                                 ->placeholder('Mi Empresa S.A.')
-                                ->prefixIcon('heroicon-o-user')
+                                ->prefixIcon(Heroicon::User)
                                 ->maxLength(100)
                                 ->validationMessages([
                                     'max' => 'El meta autor no puede superar los 100 caracteres.',
@@ -197,7 +199,7 @@ class ManageGeneralSettings extends SettingsPage
                         Textarea::make('meta_description')
                             ->label('Meta descripción')
                             ->placeholder('Descripción breve del sitio para los resultados de búsqueda...')
-                            ->rows(3)
+                            ->rows(2)
                             ->maxLength(160)
                             ->helperText('Máximo recomendado: 150–160 caracteres.')
                             ->validationMessages([
@@ -207,58 +209,60 @@ class ManageGeneralSettings extends SettingsPage
                         TextInput::make('meta_keywords')
                             ->label('Meta palabras clave')
                             ->placeholder('empresa, servicios, lima, perú')
-                            ->prefixIcon('heroicon-o-tag')
+                            ->prefixIcon(Heroicon::Tag)
                             ->maxLength(255)
                             ->helperText('Separadas por comas. Uso limitado por Google actualmente.')
                             ->validationMessages([
                                 'max' => 'Las palabras clave no pueden superar los 255 caracteres.',
                             ]),
+                        Grid::make(2)
+                            ->schema([
+                                Select::make('meta_robots')
+                                    ->label('Meta robots')
+                                    ->placeholder('Selecciona una directiva...')
+                                    ->prefixIcon(Heroicon::Cog6Tooth)
+                                    ->options([
+                                        'index,follow' => 'index, follow (predeterminado)',
+                                        'index,nofollow' => 'index, nofollow',
+                                        'noindex,follow' => 'noindex, follow',
+                                        'noindex,nofollow' => 'noindex, nofollow',
+                                        'noarchive' => 'noarchive',
+                                        'nosnippet' => 'nosnippet',
+                                        'noodp' => 'noodp',
+                                        'none' => 'none (noindex, nofollow)',
+                                    ])
+                                    ->native(false)
+                                    ->helperText('Controla cómo los bots indexan y siguen los enlaces.')
+                                    ->validationMessages([
+                                        'in' => 'Selecciona una directiva válida de robots.',
+                                    ]),
 
-                        Grid::make(2)->schema([
-                            Select::make('meta_robots')
-                                ->label('Meta robots')
-                                ->placeholder('Selecciona una directiva...')
-                                ->prefixIcon('heroicon-o-cog-6-tooth')
-                                ->options([
-                                    'index,follow' => 'index, follow (predeterminado)',
-                                    'index,nofollow' => 'index, nofollow',
-                                    'noindex,follow' => 'noindex, follow',
-                                    'noindex,nofollow' => 'noindex, nofollow',
-                                    'noarchive' => 'noarchive',
-                                    'nosnippet' => 'nosnippet',
-                                    'noodp' => 'noodp',
-                                    'none' => 'none (noindex, nofollow)',
-                                ])
-                                ->native(false)
-                                ->helperText('Controla cómo los bots indexan y siguen los enlaces.')
-                                ->validationMessages([
-                                    'in' => 'Selecciona una directiva válida de robots.',
-                                ]),
-
-                            TextInput::make('canonical_url')
-                                ->label('URL canónica')
-                                ->placeholder('https://www.miempresa.com')
-                                ->prefixIcon('heroicon-o-link')
-                                ->url()
-                                ->maxLength(255)
-                                ->helperText('URL principal del sitio para evitar contenido duplicado.')
-                                ->validationMessages([
-                                    'url' => 'Ingresa una URL válida (debe incluir https://).',
-                                    'max' => 'La URL no puede superar los 255 caracteres.',
-                                ]),
-                        ]),
-                    ]),
+                                TextInput::make('canonical_url')
+                                    ->label('URL canónica')
+                                    ->placeholder('https://www.miempresa.com')
+                                    ->prefixIcon(Heroicon::Link)
+                                    ->url()
+                                    ->maxLength(255)
+                                    ->helperText('URL principal del sitio para evitar contenido duplicado.')
+                                    ->validationMessages([
+                                        'url' => 'Ingresa una URL válida (debe incluir https://).',
+                                        'max' => 'La URL no puede superar los 255 caracteres.',
+                                    ]),
+                            ])
+                    ])
+                    ->columnSpanFull(),
 
                 Section::make('Open Graph')
                     ->description('Metadatos para compartir en Facebook, LinkedIn y similares.')
-                    ->icon('heroicon-o-share')
+                    ->icon(Heroicon::Share)
                     ->collapsible()
+                    ->collapsed(true)
                     ->schema([
                         Grid::make(2)->schema([
                             TextInput::make('og_title')
                                 ->label('OG Título')
                                 ->placeholder('Mi Empresa — Mejor opción')
-                                ->prefixIcon('heroicon-o-document-text')
+                                ->prefixIcon(Heroicon::DocumentText)
                                 ->maxLength(95)
                                 ->helperText('Máximo recomendado: 95 caracteres.')
                                 ->validationMessages([
@@ -268,7 +272,7 @@ class ManageGeneralSettings extends SettingsPage
                             Select::make('og_type')
                                 ->label('OG Tipo')
                                 ->placeholder('Selecciona un tipo...')
-                                ->prefixIcon('heroicon-o-square-3-stack-3d')
+                                ->prefixIcon(Heroicon::Square3Stack3d)
                                 ->options([
                                     'website' => 'website',
                                     'article' => 'article',
@@ -287,96 +291,63 @@ class ManageGeneralSettings extends SettingsPage
                         Textarea::make('og_description')
                             ->label('OG Descripción')
                             ->placeholder('Descripción que aparecerá al compartir en redes sociales...')
-                            ->rows(3)
+                            ->rows(2)
                             ->maxLength(200)
                             ->helperText('Máximo recomendado: 200 caracteres.')
                             ->validationMessages([
                                 'max' => 'La OG descripción no puede superar los 200 caracteres.',
                             ]),
-                    ]),
-
-                Section::make('Twitter / X')
-                    ->description('Metadatos para Twitter Cards.')
-                    ->icon('heroicon-o-chat-bubble-oval-left')
-                    ->collapsible()
-                    ->schema([
-                        Grid::make(2)->schema([
-                            Select::make('twitter_card')
-                                ->label('Twitter Card')
-                                ->placeholder('Selecciona un tipo de card...')
-                                ->prefixIcon('heroicon-o-rectangle-stack')
-                                ->options([
-                                    'summary' => 'summary',
-                                    'summary_large_image' => 'summary_large_image',
-                                    'app' => 'app',
-                                    'player' => 'player',
-                                ])
-                                ->native(false)
-                                ->helperText('Define cómo se visualiza el enlace en Twitter/X.')
-                                ->validationMessages([
-                                    'in' => 'Selecciona un tipo de Twitter Card válido.',
-                                ]),
-
-                            TextInput::make('twitter_site')
-                                ->label('Twitter cuenta del sitio')
-                                ->placeholder('@miempresa')
-                                ->prefixIcon('heroicon-o-at-symbol')
-                                ->maxLength(50)
-                                ->regex('/^@?[A-Za-z0-9_]{1,15}$/')
-                                ->helperText('Nombre de usuario en Twitter/X, con o sin @.')
-                                ->validationMessages([
-                                    'regex' => 'Ingresa un usuario de Twitter válido (máx. 15 caracteres alfanuméricos).',
-                                    'max' => 'El usuario no puede superar los 50 caracteres.',
-                                ]),
-                        ]),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
 
                 Section::make('Analytics y Seguimiento')
                     ->description('IDs de plataformas de analítica y publicidad.')
-                    ->icon('heroicon-o-chart-bar')
+                    ->icon(Heroicon::ChartBar)
                     ->collapsible()
+                    ->collapsed(true)
                     ->schema([
-                        Grid::make(3)->schema([
-                            TextInput::make('google_analytics_id')
-                                ->label('Google Analytics ID')
-                                ->placeholder('G-XXXXXXXXXX')
-                                ->prefixIcon('heroicon-o-signal')
-                                ->regex('/^(UA-\d{4,10}-\d{1,4}|G-[A-Z0-9]{10})$/')
-                                ->maxLength(20)
-                                ->helperText('Formato: G-XXXXXXXXXX (GA4) o UA-XXXXXX-X.')
-                                ->validationMessages([
-                                    'regex' => 'Ingresa un ID de Google Analytics válido (ej: G-XXXXXXXXXX).',
-                                    'max' => 'El ID no puede superar los 20 caracteres.',
-                                ]),
+                        Grid::make(3)
+                            ->schema([
+                                TextInput::make('google_analytics_id')
+                                    ->label('Google Analytics ID')
+                                    ->placeholder('G-XXXXXXXXXX')
+                                    ->prefixIcon(Heroicon::Signal)
+                                    ->regex('/^(UA-\d{4,10}-\d{1,4}|G-[A-Z0-9]{10})$/')
+                                    ->maxLength(20)
+                                    ->helperText('Formato: G-XXXXXXXXXX (GA4) o UA-XXXXXX-X.')
+                                    ->validationMessages([
+                                        'regex' => 'Ingresa un ID de Google Analytics válido (ej: G-XXXXXXXXXX).',
+                                        'max' => 'El ID no puede superar los 20 caracteres.',
+                                    ]),
 
-                            TextInput::make('google_tag_manager_id')
-                                ->label('Google Tag Manager ID')
-                                ->placeholder('GTM-XXXXXXX')
-                                ->prefixIcon('heroicon-o-tag')
-                                ->regex('/^GTM-[A-Z0-9]{7}$/')
-                                ->maxLength(15)
-                                ->helperText('Formato: GTM-XXXXXXX.')
-                                ->validationMessages([
-                                    'regex' => 'Ingresa un ID de GTM válido (ej: GTM-XXXXXXX).',
-                                    'max' => 'El ID no puede superar los 15 caracteres.',
-                                ]),
+                                TextInput::make('google_tag_manager_id')
+                                    ->label('Google Tag Manager ID')
+                                    ->placeholder('GTM-XXXXXXX')
+                                    ->prefixIcon(Heroicon::Tag)
+                                    ->regex('/^GTM-[A-Z0-9]{7}$/')
+                                    ->maxLength(15)
+                                    ->helperText('Formato: GTM-XXXXXXX.')
+                                    ->validationMessages([
+                                        'regex' => 'Ingresa un ID de GTM válido (ej: GTM-XXXXXXX).',
+                                        'max' => 'El ID no puede superar los 15 caracteres.',
+                                    ]),
 
-                            TextInput::make('facebook_pixel_id')
-                                ->label('Facebook Pixel ID')
-                                ->placeholder('123456789012345')
-                                ->prefixIcon('heroicon-o-currency-dollar')
-                                ->numeric()
-                                ->minLength(15)
-                                ->maxLength(16)
-                                ->helperText('ID numérico de 15–16 dígitos.')
-                                ->validationMessages([
-                                    'numeric' => 'El Facebook Pixel ID debe ser numérico.',
-                                    'min_digits' => 'El Pixel ID debe tener al menos 15 dígitos.',
-                                    'max' => 'El Pixel ID no puede superar los 16 dígitos.',
-                                ]),
-                        ]),
-                    ]),
-
+                                TextInput::make('facebook_pixel_id')
+                                    ->label('Facebook Pixel ID')
+                                    ->placeholder('123456789012345')
+                                    ->prefixIcon(Heroicon::CurrencyDollar)
+                                    ->numeric()
+                                    ->minLength(15)
+                                    ->maxLength(16)
+                                    ->helperText('ID numérico de 15–16 dígitos.')
+                                    ->validationMessages([
+                                        'numeric' => 'El Facebook Pixel ID debe ser numérico.',
+                                        'min_digits' => 'El Pixel ID debe tener al menos 15 dígitos.',
+                                        'max' => 'El Pixel ID no puede superar los 16 dígitos.',
+                                    ]),
+                            ])
+                    ])
+                    ->columnSpanFull(),
             ]);
     }
 }

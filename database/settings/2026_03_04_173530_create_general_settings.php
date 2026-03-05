@@ -30,9 +30,6 @@ return new class extends SettingsMigration
         $this->migrator->add('general.og_description', null);
         $this->migrator->add('general.og_type', 'website');
 
-        $this->migrator->add('general.twitter_card', null);
-        $this->migrator->add('general.twitter_site', null);
-
         $this->migrator->add('general.google_analytics_id', null);
         $this->migrator->add('general.google_tag_manager_id', null);
         $this->migrator->add('general.facebook_pixel_id', null);

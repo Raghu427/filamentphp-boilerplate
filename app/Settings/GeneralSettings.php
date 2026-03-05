@@ -29,8 +29,6 @@ class GeneralSettings extends Settings
     public ?string $og_title;
     public ?string $og_description;
     public ?string $og_type;
-    public ?string $twitter_card;
-    public ?string $twitter_site;
 
     public ?string $google_analytics_id;
     public ?string $google_tag_manager_id;
