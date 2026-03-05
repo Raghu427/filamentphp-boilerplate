@@ -6,22 +6,16 @@ use App\Filament\Exports\UserExporter;
 use App\Filament\Imports\UserImporter;
 use App\Services\PdfService;
 use Filament\Actions\Action;
-use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ExportAction;
 use Filament\Actions\ImportAction;
 use Filament\Actions\ViewAction;
-use Filament\Notifications\Notification;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Collection;
-use Mpdf\Mpdf;
-
-use function Illuminate\Support\now;
 
 class UsersTable
 {

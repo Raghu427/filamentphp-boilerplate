@@ -21,7 +21,9 @@
         "livewire/livewire": "^4.0",
         "mpdf/mpdf": "^8.2",
         "openplain/filament-shadcn-theme": "^1.1",
-        "swisnl/filament-backgrounds": "^2.0"
+        "rappasoft/laravel-authentication-log": "^6.0",
+        "swisnl/filament-backgrounds": "^2.0",
+        "tapp/filament-authentication-log": "^5"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.6",
