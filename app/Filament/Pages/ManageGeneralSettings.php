@@ -4,6 +4,7 @@ namespace App\Filament\Pages;
 
 use App\Settings\GeneralSettings;
 use BackedEnum;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -16,6 +17,8 @@ use Filament\Support\Icons\Heroicon;
 
 class ManageGeneralSettings extends SettingsPage
 {
+    use HasPageShield;
+
     protected static ?int $navigationSort = 160;
 
     protected static string $settings = GeneralSettings::class;

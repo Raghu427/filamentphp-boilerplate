@@ -10,6 +10,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Rappasoft\LaravelAuthenticationLog\Models\AuthenticationLog;
 
 class AuthenticationLogResource extends Resource
@@ -27,6 +28,16 @@ class AuthenticationLogResource extends Resource
     protected static ?string $modelLabel = 'sesión';
 
     protected static ?string $pluralModelLabel = 'sesiones';
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()->can('ViewAny:AuthenticationLog');
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()->can('ViewAny:AuthenticationLog');
+    }
 
     public static function infolist(Schema $schema): Schema
     {

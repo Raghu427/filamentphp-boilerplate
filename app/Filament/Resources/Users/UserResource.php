@@ -29,6 +29,16 @@ class UserResource extends Resource
 
     protected static ?string $pluralModelLabel = 'usuarios';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    public static function getNavigationBadgeTooltip(): ?string
+    {
+        return 'Número de usuarios';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return UserForm::configure($schema);

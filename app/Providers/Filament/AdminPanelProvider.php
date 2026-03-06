@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use AchyutN\FilamentLogViewer\FilamentLogViewer;
+use App\Filament\Pages\AccountSetting;
 use Filament\Http\Middleware\Authenticate;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -78,7 +79,8 @@ class AdminPanelProvider extends PanelProvider
                         navigationGroup: 'Settings', // Sets the navigation group for the My Profile page (default = null)
                         hasAvatars: false, // Enables the avatar upload form component (default = false)
                         slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
-                    ),
+                    )
+                    ->customMyProfilePage(AccountSetting::class),
 
                 FilamentLogViewer::make()
                     ->authorize(fn(): bool => auth()->check() && auth()->user()->can('View:LogTable'))

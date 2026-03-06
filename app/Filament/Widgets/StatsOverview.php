@@ -4,7 +4,6 @@ namespace App\Filament\Widgets;
 
 use App\Models\User;
 use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
-use Filament\Support\Enums\IconPosition;
 use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -19,7 +18,7 @@ class StatsOverview extends StatsOverviewWidget
 
     protected ?string $heading = "Estadísticas generales";
 
-    protected ?string $description = "Una descripción general de algunos módulos.";
+    protected ?string $description = "Estadísticas generales del sistema.";
 
     protected static ?int $sort = 1;
 
